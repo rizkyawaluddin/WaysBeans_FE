@@ -145,7 +145,7 @@ export default function Cart() {
                         <div>
                         {transaction?.carts.map((item, index) => (
                             <div className='d-flex mb-2' style={{width:'100%'}}>
-                                <img src={item?.product?.image} alt='productimage' style={{width:'20%'}} />
+                                <img src={item.product?.image} alt='productimage' style={{width:'20%'}} />
                                 <div className="d-flex justify-content-between" style={{width:'100%'}}>
                                         <div className='detailcartlist ps-3'>
                                             <p className='fw-semibold mb-3 colorPrimary' style={{fontSize:'22px'}}>{item.product.name}</p>
