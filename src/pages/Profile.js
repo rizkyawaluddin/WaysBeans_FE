@@ -1,4 +1,3 @@
-import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { useQuery } from 'react-query'
 import ProfileImg from '../assets/img/profile.svg'
@@ -9,8 +8,15 @@ import QRCode from 'react-qr-code'
 import Navbar from '../components/navbar/Navbar'
 import Rp from 'rupiah-format'
 
+import { UserContext } from '../context/UserContext';
+import { useContext } from 'react';
+
 import { API } from '../config/api'
 export default function Profile() {
+
+    // UserContext
+    const [state] = useContext(UserContext)
+    console.log(state)
 
     let { data: transaction } = useQuery("traans1", async () => {
         const response = await API.get("/transaction-status");
@@ -37,11 +43,11 @@ export default function Profile() {
                 <div className='ms-5'>
                 <div>
                     <p className='fs-4 fw-bold'>Name :</p>
-                    <p>{transaction?.user?.name}</p>
+                    <p>{state?.user?.name}</p>
                 </div>
                 <div>
                     <p className='fs-4 fw-bold'>Email :</p>
-                    <p>{transaction?.user?.email}</p>
+                    <p>{state?.user?.email}</p>
                 </div>
                 </div>
             </div>
