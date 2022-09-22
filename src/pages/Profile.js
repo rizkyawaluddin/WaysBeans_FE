@@ -63,7 +63,7 @@ export default function Profile() {
                             {items?.carts?.map((cart, idx) => (
                             <div className='p-3 between' style={{width:'100%', backgroundColor:'#F6E6DA'}}>
                                 <div className='d-flex' >
-                                            <img src={"http://localhost:5000/uploads/" + cart?.product?.image} alt='product' style={{width:'30%',height:'80%',borderRadius:'5px'}} />
+                                            <img src={cart?.product?.image} alt='product' style={{width:'30%',height:'80%',borderRadius:'5px'}} />
                                             <div className='ms-3'>
                                                 <h5 className='mb-0 colorPrimary fw-bold'>{cart?.product?.name}</h5>
                                                 <p className='colorSecondary'><span className='colorPrimary fw-bold'>Saturday, </span> 25 agustus 2022</p>
